@@ -1,11 +1,11 @@
 
-const csv = require('csvtojson');
-const {fetch}  = require('cross-fetch');
-const jwt = require('jsonwebtoken');
-const express = require('express');
-const fs = require('fs');
-const tokenSecret = 'a3f9e45c-8ced';
-//------------------ parse the  the input csv stream and convert to array--------------
+    const csv = require('csvtojson');
+    const {fetch}  = require('cross-fetch');
+    const jwt = require('jsonwebtoken');
+    const fs = require('fs');
+    const tokenSecret = 'a3f9e45c-8ced';
+
+    //------------------ parse the the input csv stream and convert to array ----------
     const parseCsv = async function (csvBuff){
         var csvstr = csvBuff.toString(); 
         var data = await csv().fromString(csvstr);
@@ -14,7 +14,7 @@ const tokenSecret = 'a3f9e45c-8ced';
     module.exports.parseCsv  = parseCsv;
     //---------------------------------------------------------------------------------
 
-    //------------------ get the Exchange rate from a 3pr Service ---------------------
+    //------------------ get the exchange rate from a 3pr Service ---------------------
     const  getEURforUSD = async function (url,apiKye){
         const response = await fetch(url + apiKye);
         if(!response) return null;
@@ -117,12 +117,6 @@ const tokenSecret = 'a3f9e45c-8ced';
             })
         }
     }
-
-    function redToken()
-    {
-        let key = fs.readFileSync('./routes/login.json');
-        let token = JSON.parse(key).token;
-        return token;
-    }
+    //---------------------------------------------------------------------------------
     module.exports.authVerify = authVerify;
     //---------------------------------------------------------------------------------

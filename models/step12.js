@@ -1,8 +1,12 @@
 const utils = require('../utils');
 
-const step1 = async function(csvData){
+/**
+ *  The use of MVC kind of Architcture allow the flxibility
+ *  in the code. this is why we use this Model layer (to  implement the business logic)
+ */
+const step12 = async function(csvData){
     data = await utils.executeTrads(csvData);
     return data;
 }
 
-module.exports.step1 = step1;
+module.exports.step12 = step12;
