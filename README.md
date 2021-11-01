@@ -45,5 +45,7 @@ EUR2USD Home task
  
    # Docker
      The docker file created for this task is placed in the github repo
-     
+      
+      To pull the docker image use:
+         docker pull guykoppelman/eur2usd-web-app
 
