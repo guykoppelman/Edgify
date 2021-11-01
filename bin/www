@@ -3,7 +3,6 @@
 /**
  * Module dependencies.
  */
-
 const app = require('../app');
 const debug = require('debug')('eur2usd:server');
 const http = require('http');
@@ -16,7 +15,7 @@ const path = require("path")
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 /**
