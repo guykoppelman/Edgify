@@ -1,6 +1,7 @@
 FROM node:16
 
 # Create app directory
+RUN mkdir -p /usr/src/edgify
 WORKDIR /usr/src/edgify
 
 # Install app dependencies
@@ -16,4 +17,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "/usr/src/edgify/bin/www" ]

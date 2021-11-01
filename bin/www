@@ -8,7 +8,7 @@ const debug = require('debug')('eur2usd:server');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
-const path = require("path")
+
 
 
 /**
@@ -89,5 +89,6 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  //debug('Listening on ' + bind);
+  console.log(`App started successfully...., listening on port ${addr.port}  :)`)
 }
